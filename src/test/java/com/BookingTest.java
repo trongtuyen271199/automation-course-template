@@ -26,8 +26,6 @@ public class BookingTest extends BasicTest {
         WebElement loginBtn = driver.findElement(By.xpath("//button[@name='login']"));
         loginBtn.click();
 
-
-        
         WebElement seachBox = driver.findElement(By.xpath("//input[@placeholder='Tìm kiếm...'][1]"));
         seachBox.sendKeys("Mercedes");
         Utils.hardWait();
