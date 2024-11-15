@@ -25,10 +25,13 @@ public class BookingTest extends BasicTest {
         passInput.sendKeys("Admin@123456");
         WebElement loginBtn = driver.findElement(By.xpath("//button[@name='login']"));
         loginBtn.click();
+
+
+        
         WebElement seachBox = driver.findElement(By.xpath("//input[@placeholder='Tìm kiếm...'][1]"));
         seachBox.sendKeys("Mercedes");
         Utils.hardWait();
-        WebElement optionFirts = driver.findElement(By.xpath("//a[contains(text(),'Bơm nước xe Mercedes SLK200, SLK300, GLK200, E260, C350-2742000207')]"));
+        WebElement optionFirts = driver.findElement(By.xpath("//a[text()='Bơm nước xe ']"));
         optionFirts.click();
         WebElement selectOption = driver.findElement(By.xpath("//select[@id='pa_xuat-xu']/option[@value='germany']"));
         selectOption.click();
