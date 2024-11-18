@@ -13,9 +13,9 @@ import com.utils.Utils;
 import com.utils.BasicTest;
 
 public class BookingTest extends BasicTest {
-
+// Booking thành công - khi giỏ hàng = 0
     @Test(priority = 1)
-    public void registerTestFailure() throws Exception {
+    public void BookingSuccess() throws Exception {
         String url = "https://bantheme.xyz/hathanhauto/tai-khoan/";
         driver.get(url);
         Assert.assertEquals(driver.getCurrentUrl(), url);
@@ -25,7 +25,7 @@ public class BookingTest extends BasicTest {
         passInput.sendKeys("Admin@123456");
         WebElement loginBtn = driver.findElement(By.xpath("//button[@name='login']"));
         loginBtn.click();
-
+        Utils.hardWait();
         WebElement seachBox = driver.findElement(By.xpath("//input[@placeholder='Tìm kiếm...'][1]"));
         seachBox.sendKeys("Mercedes");
         Utils.hardWait();
