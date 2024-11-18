@@ -17,7 +17,6 @@
                 
               </class>
 
-
             <class name="com.BookingTest" >
                 <methods>
                     <include name=" BookingSuccess"/>

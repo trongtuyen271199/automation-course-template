@@ -55,7 +55,6 @@ public class LoginIceHrmTest extends BasicTest {
             return false;
         }
     }
-
     @Test(dataProvider = "loginTestData")
     public void loginTestSuccess(String uname, String pw, boolean expectedMesageErrorDisplay) throws Exception {
         String url = "https://icehrm-open.gamonoid.com/login.php";
@@ -77,7 +76,6 @@ public class LoginIceHrmTest extends BasicTest {
         // boolean MessgageDisplayed = isMessgageDisplayed();
         Assert.assertEquals(isMessgageDisplayed(), expectedMesageErrorDisplay);
     }
-
     @Test(dataProvider = "loginTestDataFalse")
     public void loginTestFalse(String unamefalse, String pwfalse, boolean expectedMesageErrorDisplay) throws Exception {
         String url = "https://icehrm-open.gamonoid.com/login.php";

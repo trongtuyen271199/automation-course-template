@@ -33,7 +33,6 @@
             </class>
 
 
-
            <class name="com.LoginIceHrmTest" >
                 <methods>
                     <include name="loginTestSuccess"/>
