@@ -33,17 +33,17 @@ public class LoginIceHrmTest extends BasicTest {
         Object[][] testdata = new Object[3][3];
      
         // false Admin
-        testdata[3][0] = "admin";
-        testdata[3][1] = "1234567";
-        testdata[3][2] = true;
+        testdata[0][0] = "admin";
+        testdata[0][1] = "1234567";
+        testdata[0][2] = true;
         // false manager
-        testdata[4][0] = "manager";
-        testdata[4][1] = "1234567";
-        testdata[4][2] = true;
+        testdata[1][0] = "manager";
+        testdata[1][1] = "1234567";
+        testdata[1][2] = true;
         // false user
-        testdata[5][0] = "user1";
-        testdata[5][1] = "1234567";
-        testdata[5][2] = true;
+        testdata[2][0] = "user1";
+        testdata[2][1] = "1234567";
+        testdata[2][2] = true;
 
         return testdata;
     }
