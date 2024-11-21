@@ -2,6 +2,7 @@ package com;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -47,10 +48,9 @@ public class LoginTest extends BasicTest {
         return testdata;
     }
 
-
     public boolean isLogoutDisplayed() {
         try {
-            WebElement logoutBtn = driver.findElement(By.xpath("//li[contains(@class,'logout')]"));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[contains(@class,'logout')]")));
             return true;
         } catch (Exception e) {
             return false;
@@ -63,23 +63,12 @@ public class LoginTest extends BasicTest {
         String url = "https://bantheme.xyz/hathanhauto/tai-khoan/";
         driver.get(url);
         Assert.assertEquals(driver.getCurrentUrl(), url);
-        Utils.hardWait(1000); // 3s
-
-        WebElement emailInput = driver.findElement(By.xpath("//input[@id='username']"));
-        emailInput.sendKeys(uname);
-        Utils.hardWait(1000); // 3s
-        WebElement passInput = driver.findElement(By.xpath("//input[@id='password']"));
-        passInput.sendKeys(pw);
-        Utils.hardWait(1000); // 3s
-
-        WebElement loginBtn = driver.findElement(By.xpath("//button[@name='login']"));
-        loginBtn.click();
-        Utils.hardWait(1000); // 3s
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='username']"))).sendKeys(uname);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='password']"))).sendKeys(pw);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@name='login']"))).click();
         boolean logoutBtnDisplayed = isLogoutDisplayed();
         Assert.assertEquals(logoutBtnDisplayed, expectedLogoutDisplay);
     }
-
-
 
     public boolean isMessageErrorDisplayed() {
         try {
@@ -90,8 +79,10 @@ public class LoginTest extends BasicTest {
         }
 
     }
+
     @Test(dataProvider = "loginTestDataFalse")
-    public void loginTestFalse(String unameFalse, String pwFalse, boolean expectedErrorMessageDisplay) throws Exception {
+    public void loginTestFalse(String unameFalse, String pwFalse, boolean expectedErrorMessageDisplay)
+            throws Exception {
         String url = "https://bantheme.xyz/hathanhauto/tai-khoan/";
         driver.get(url);
         Assert.assertEquals(driver.getCurrentUrl(), url);

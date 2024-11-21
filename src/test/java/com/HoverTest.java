@@ -1,22 +1,20 @@
 package com;
 
-import java.time.Duration;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-//import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-//import com.utils.Utils;
-import com.utils.BasicTest;
 
-public class BookingTest extends BasicTest {
+import com.utils.BasicTest;
+import com.utils.Utils;
+
+public class HoverTest extends BasicTest {
     @DataProvider(name = "loginTestData")
     public Object[][] testDataFeed() {
         Object[][] testdata = new Object[1][3];
-        testdata[0][0] = "trongtuyen451@gmail.com";
+        testdata[0][0] = "trantuyen991127@gmail.com";
         testdata[0][1] = "Admin@123456";
         testdata[0][2] = true;
         return testdata;
@@ -39,28 +37,36 @@ public class BookingTest extends BasicTest {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='username']"))).sendKeys(uname);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='password']"))).sendKeys(pw);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@name='login']"))).click();
-
+        Utils.hardWait(5000);
         boolean logoutBtnDisplayed = isLogoutDisplayed();
         Assert.assertEquals(logoutBtnDisplayed, expectedLogoutDisplay);
-        // nhập text
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='Tìm kiếm...'][1]")))
-                .sendKeys("Mercedes");
-        // chọn option 1
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='Bơm nước xe ']"))).click();
-        // select xuất xứ xứ
-        WebElement selectOption = driver.findElement(By.xpath("//select[@id='pa_xuat-xu']/option[@value='germany']"));
-        selectOption.click();
-        // click icon + số lương
-        WebElement btnPlus = driver.findElement(By.xpath("//button[@class='plus']"));
-        btnPlus.click();
-        // click add
-        WebElement btnAdd = driver.findElement(By.xpath("//button[contains(@class,'single_add_to_cart_button')]"));
-        btnAdd.click();
-        // verify get url card
-        String urlCard = "https://bantheme.xyz/hathanhauto/gio-hang/";
-        Assert.assertEquals(driver.getCurrentUrl(), urlCard);
-        // verify số lượng sản phẩm =2
-        WebElement iconCard = driver.findElement(By.xpath("//div[@class='d-table-cell link-cart']//a/b[text()='2']"));
-        Assert.assertTrue(iconCard.isDisplayed());
+
+
+
+        
+        WebElement menuItem = driver.findElement(By.xpath("//li[@id='menu-item-347']"));
+        actions.moveToElement(menuItem).perform();
+        Utils.hardWait(3000);
+
+        WebElement menuItem1 = driver.findElement(By.xpath("//li[@id='menu-item-465']"));
+        actions.moveToElement(menuItem1).perform();
+        Utils.hardWait(3000);
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[@id='menu-item-468']"))).click();
+
+        String dynamicText = "Phanh tay ô tô";  // Văn bản động cần kiểm tra
+        boolean isElementDisplayed = isElementPresent(dynamicText);  // Kiểm tra sự hiện diện của phần tử
+
+   
+        Assert.assertEquals(isElementDisplayed, expectedLogoutDisplay); // Kiểm tra xem phần tử có hiển thị hay không
+    }
+
+    public boolean isElementPresent(String dynamicText) {
+        try {
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//nav[@class='woocommerce-breadcrumb']//text()[contains(., '" + dynamicText + "')]")));
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 }
