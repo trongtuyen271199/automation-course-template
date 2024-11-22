@@ -41,9 +41,6 @@ public class HoverTest extends BasicTest {
         boolean logoutBtnDisplayed = isLogoutDisplayed();
         Assert.assertEquals(logoutBtnDisplayed, expectedLogoutDisplay);
 
-
-
-        
         WebElement menuItem = driver.findElement(By.xpath("//li[@id='menu-item-347']"));
         actions.moveToElement(menuItem).perform();
         Utils.hardWait(3000);
@@ -54,17 +51,17 @@ public class HoverTest extends BasicTest {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[@id='menu-item-468']"))).click();
 
-        String dynamicText = "Phanh tay ô tô";  // Văn bản động cần kiểm tra
-        boolean isElementDisplayed = isElementPresent(dynamicText);  // Kiểm tra sự hiện diện của phần tử
-
-   
-        Assert.assertEquals(isElementDisplayed, expectedLogoutDisplay); // Kiểm tra xem phần tử có hiển thị hay không
+        String dynamicText = "Phanh tay ô tô"; // Văn bản động cần kiểm tra
+        boolean isElementDisplayed = isElementPresent(dynamicText); // Kiểm tra sự hiện diện của phần tử
+        Assert.assertTrue(isElementDisplayed);
     }
 
     public boolean isElementPresent(String dynamicText) {
         try {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//nav[@class='woocommerce-breadcrumb']//text()[contains(., '" + dynamicText + "')]")));
-            return true;
+            String breadcrumb= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//nav[@class='woocommerce-breadcrumb']"))).getText();
+          System.out.println(breadcrumb);
+          boolean display=breadcrumb.contains(dynamicText);
+            return display;
         } catch (Exception e) {
             return false;
         }
