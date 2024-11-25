@@ -18,7 +18,6 @@ public class Bai21_ViewItemTest extends BasicTest {
         testdata[0][2] = true;
         return testdata;
     }
-
     public boolean isLogoutDisplayed() {
         try {
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[contains(@class,'logout')]")));
@@ -27,7 +26,6 @@ public class Bai21_ViewItemTest extends BasicTest {
             return false;
         }
     }
-
     @Test(dataProvider = "loginTestData")
     public void loginTestSuccess(String uname, String pw, boolean expectedLogoutDisplay) throws Exception {
         String url = "https://bantheme.xyz/hathanhauto/tai-khoan/";
@@ -47,7 +45,6 @@ public class Bai21_ViewItemTest extends BasicTest {
         boolean isElementDisplayed = isElementPresent(dynamicText); // Kiểm tra sự hiện diện của phần tử
         Assert.assertTrue(isElementDisplayed);
     }
-
     public boolean isElementPresent(String dynamicText) {
         try {
             String breadcrumb= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//nav[@class='woocommerce-breadcrumb']"))).getText();
