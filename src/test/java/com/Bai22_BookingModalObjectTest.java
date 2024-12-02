@@ -11,7 +11,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.google.gson.annotations.Until;
-import com.pages.CardPage;
+import com.pages.CartPage;
 import com.pages.HomePage;
 import com.pages.LoginPage;
 //import com.utils.Utils;
@@ -57,8 +57,8 @@ public class Bai22_BookingModalObjectTest extends BasicTest {
         HomePage homePage = new HomePage(driver);
        // String searchKey = "Mercedes";// khai báo Biến String chỗ nào mới hợp lý ???
         homePage.inputSeach(searchKey);
-        CardPage cardPage = new CardPage(driver);
-        cardPage.clickOptionOne()
+        CartPage cartPage = new CartPage(driver);
+        cartPage.clickOptionOne()
                 .clickXuatXu()
                 .clickIconPlus()
                 .clickAdd();
@@ -67,13 +67,13 @@ public class Bai22_BookingModalObjectTest extends BasicTest {
         String urlCard = "https://bantheme.xyz/hathanhauto/gio-hang/";
         Assert.assertEquals(driver.getCurrentUrl(), urlCard);
         // verify số lượng sản phẩm =2
-        WebElement iconCard = driver.findElement(cardPage.iconCard);
+        WebElement iconCard = driver.findElement(cartPage.iconCart);
         Assert.assertTrue(iconCard.isDisplayed());
         // Cart Page - verify add to cart successfully
-        WebElement successmessage = driver.findElement(cardPage.successmessage);
+        WebElement successmessage = driver.findElement(cartPage.successmessage);
         Assert.assertTrue(successmessage.isDisplayed());
         // => Remove product
-        cardPage.removeProduct();
+        cartPage.removeProduct();
         // Chưa verify được sau khi xoá sản phẩm khỏi giỏ hàng
         // WebElement messCardNull = driver.findElement(By.xpath("//p[text()='Chưa có
         // sản phẩm nào trong giỏ hàng.']"));
