@@ -8,7 +8,7 @@ public class HomePage extends BasePage {
     public HomePage(WebDriver givenDriver) {
         super(givenDriver);
     }
-
+    public By byLogoutBtn = By.xpath("//li[contains(@class,'logout')]");
     // Element Home Page
     By bySeachBox = By.xpath("//input[@placeholder='Tìm kiếm...'][1]");
 
@@ -16,4 +16,13 @@ public class HomePage extends BasePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(bySeachBox)).sendKeys(valueSeach);
         return this;
     }
+
+   
+    
+
+
+    // public HomePage inputSeach(String valueSeach) {
+    //     wait.until(ExpectedConditions.visibilityOfElementLocated(bySeachBox)).sendKeys(valueSeach);
+    //     return this;
+    // }
 }

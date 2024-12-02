@@ -29,13 +29,17 @@ public class Bai22_BookingModalObjectTest extends BasicTest {
 
     public boolean isLogoutDisplayed() {
         try {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[contains(@class,'logout')]")));
+           HomePage homePage=new HomePage(driver);
+           wait.until(ExpectedConditions.visibilityOfElementLocated(homePage.byLogoutBtn));
+        //   wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[contains(@class,'logout')]")));
             return true;
         } catch (Exception e) {
             return false;
         }
     }
 
+
+    String searchKey = "Mercedes";
     @Test(dataProvider = "loginTestData")
     public void loginTestSuccess(String uname, String pw, boolean expectedLogoutDisplay) throws Exception {
         String url = "https://bantheme.xyz/hathanhauto/tai-khoan/";
@@ -51,7 +55,7 @@ public class Bai22_BookingModalObjectTest extends BasicTest {
         Assert.assertEquals(logoutBtnDisplayed, expectedLogoutDisplay);
         // SEARCH -> ADD CARD
         HomePage homePage = new HomePage(driver);
-        String searchKey = "Mercedes";// khai báo Biến String chỗ nào mới hợp lý ???
+       // String searchKey = "Mercedes";// khai báo Biến String chỗ nào mới hợp lý ???
         homePage.inputSeach(searchKey);
         CardPage cardPage = new CardPage(driver);
         cardPage.clickOptionOne()
@@ -63,10 +67,10 @@ public class Bai22_BookingModalObjectTest extends BasicTest {
         String urlCard = "https://bantheme.xyz/hathanhauto/gio-hang/";
         Assert.assertEquals(driver.getCurrentUrl(), urlCard);
         // verify số lượng sản phẩm =2
-        WebElement iconCard = driver.findElement(By.xpath("//div[@class='d-table-cell link-cart']//a/b[text()='2']"));
+        WebElement iconCard = driver.findElement(cardPage.iconCard);
         Assert.assertTrue(iconCard.isDisplayed());
         // Cart Page - verify add to cart successfully
-        WebElement successmessage = driver.findElement(By.xpath("//a[@class='button wc-forward']"));
+        WebElement successmessage = driver.findElement(cardPage.successmessage);
         Assert.assertTrue(successmessage.isDisplayed());
         // => Remove product
         cardPage.removeProduct();

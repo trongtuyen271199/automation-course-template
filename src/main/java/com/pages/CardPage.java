@@ -2,6 +2,7 @@ package com.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class CardPage extends BasePage {
@@ -16,6 +17,10 @@ public class CardPage extends BasePage {
     By byIconCard2 = By.xpath("//div[@class='d-table-cell link-cart']//a/b[text()='2']");
     By byProductRemove = By.xpath("//td[@class='product-remove']");
 
+    public By iconCard = By.xpath("//div[@class='d-table-cell link-cart']//a/b[text()='2']");
+    public By successmessage = By.xpath("//a[@class='button wc-forward']");
+
+    
     public CardPage clickOptionOne() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(byOptionOne)).click();
         return this;
@@ -41,4 +46,5 @@ public class CardPage extends BasePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(byProductRemove)).click();
         return this;
     }
+
 }
