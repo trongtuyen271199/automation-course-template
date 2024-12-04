@@ -13,7 +13,7 @@ jobs:
             contents: "read"
             id-token: "write"
         steps:
-        - user: actions/checkout@v3
+        - uses: actions/checkout@v3
 
         - name: Set up JDK
           uses: actions/setup-java@v2
