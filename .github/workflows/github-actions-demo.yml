@@ -30,4 +30,4 @@ jobs:
 
         - name: CI test
           run:
-            mvn clecn test -Dsuite=Smoke 
+            mvn clean test -Dsuite=Smoke 
