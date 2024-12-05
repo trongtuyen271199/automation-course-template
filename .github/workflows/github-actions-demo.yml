@@ -1,9 +1,7 @@
 name: Test web
 on:
-    push:
-         branches:
-             - '0 * * * *'
-
+    schedule:
+    - cron: "0/5 * * * *"
 jobs:
     test-ci:
         name: Test CI
