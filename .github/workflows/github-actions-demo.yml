@@ -2,7 +2,7 @@ name: Test web
 on:
     push:
          branches:
-            s - '**'
+            - '**'
 jobs:
     test-ci:
         name: Test CI
