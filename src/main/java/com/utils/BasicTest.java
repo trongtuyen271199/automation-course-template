@@ -41,7 +41,8 @@ options.addArguments("--no-sanbox");
 
 
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver(options);
+       driver = new ChromeDriver(options);
+       // driver = new ChromeDriver();
         // Maximize the browser
         driver.manage().window().maximize();
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

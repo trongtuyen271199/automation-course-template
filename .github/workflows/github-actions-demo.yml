@@ -35,4 +35,4 @@ jobs:
           with:
             name: report-${{github.run_number}}
             path:
-                 target/surefire-report
+                 target/surefire-reports
