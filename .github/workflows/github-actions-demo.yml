@@ -1,11 +1,5 @@
 name: Test web
 on:
-  workflow_dispatch:
-    inputs:
-       test_suite:
-         description: 'Suite to be run (smoke/regression)'
-         required: true
-         default: 'smoke'
     push:
          branches:
              - '**'
