@@ -15,7 +15,7 @@ jobs:
         timeout-minutes: 30
         runs-on: ubuntu-latest
         permissions:
-            contents: "read"https://media.discordapp.net/attachments/1302226075329499200/1315223138082095134/Screenshot_2024-12-08_at_14.47.06.png?ex=6756a07f&is=67554eff&hm=930d78cfebbd4820b8bd576f2a4cef0a4a760024627e57e805b6f5fcc8194eef&=&format=webp&quality=lossless&width=705&height=316
+            contents: "read"
             id-token: "write"
         steps:
         - uses: actions/checkout@v3
