@@ -35,6 +35,11 @@ public class LoginPage extends BasePage {
         return this;
     }
 
+    // public LoginPage loginAndSubmit(String uname, String pw) {
+    //     this.enterEmail(null);
+    //     this.enterPassword(pw);
+    // }
+
 
     
 }

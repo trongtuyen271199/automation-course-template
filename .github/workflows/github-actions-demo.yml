@@ -5,7 +5,7 @@ on:
             - '**'
     workflow_dispatch:
         inputs:
-            test_suite:
+            test_suite1:
                 description: "demo xyz"
                 required: true
                 default: 'Smoke'
@@ -35,7 +35,7 @@ jobs:
 
         - name: CI test
           run:
-            mvn clean test -Dsuite=${{github.event.inputs.test}}
+            mvn clean test -Dsuite=${{github.event.inputs.test_suite1}}
         - uses: actions/upload-artifact@v3
           with:
             name: report-${{github.run_number}}
