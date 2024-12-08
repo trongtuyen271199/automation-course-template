@@ -1,4 +1,4 @@
-name: Test web
+name: Test Saniry
 on:
     push:
         branches:
