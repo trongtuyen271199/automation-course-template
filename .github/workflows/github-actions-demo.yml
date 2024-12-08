@@ -4,11 +4,11 @@ on:
         branches:
             - '**'
     workflow_dispatch:
-      inputs:
-        test_suite:
-          description: "demo xyz"
-          required: true
-          default: 'Smoke'
+        inputs:
+            test_suite:
+                description: "demo xyz"
+                required: true
+                default: 'Smoke'
 jobs:
     test-ci:
         name: Test CI
@@ -35,7 +35,7 @@ jobs:
 
         - name: CI test
           run:
-            mvn clean test -Dsuite=${{github.event.inputs.test_suite}}
+            mvn clean test -Dsuite=${{github.event.inputs.test}}
         - uses: actions/upload-artifact@v3
           with:
             name: report-${{github.run_number}}
