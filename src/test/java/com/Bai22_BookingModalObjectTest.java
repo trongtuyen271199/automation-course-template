@@ -55,7 +55,6 @@ public class Bai22_BookingModalObjectTest extends BasicTest {
         Assert.assertEquals(logoutBtnDisplayed, expectedLogoutDisplay);
         // SEARCH -> ADD CARD
         HomePage homePage = new HomePage(driver);
-       // String searchKey = "Mercedes";// khai báo Biến String chỗ nào mới hợp lý ???
         homePage.inputSeach(searchKey);
         CartPage cartPage = new CartPage(driver);
         cartPage.clickOptionOne()
