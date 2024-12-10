@@ -38,3 +38,4 @@ public class LoginPage extends BasePage {
 // Box địa chỉ email đăng kí 
 // Box mật khẩu 
 // Button đăng kí 
+//

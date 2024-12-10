@@ -15,9 +15,3 @@ Feature: Login functionality cucumber
       |                         | Admin@123456 | false    |
       | trongtuyen451@gmail.com |              | false    |
       |                         |              | false    |
-    # @Ignore
-    # Scenario: Login Failed
-    #     Given the user is on the homepage
-    #     When user enters email
-    #     And user enters password
-    #     Then verify login successfully
