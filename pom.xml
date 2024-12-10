@@ -62,15 +62,15 @@
                         </goals>
                     </execution>
                 </executions>
-                <!-- <configuration>
+                <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
-                    <suiteXmlFiles>
+                    <!-- <suiteXmlFiles>
                         <suiteXmlFile>src/test/resources/suites/${suite}.xml</suiteXmlFile>
-                    </suiteXmlFiles>
-                </configuration> -->
+                    </suiteXmlFiles> -->
+                </configuration>
                 <dependencies>
                     <dependency>
                         <groupId>org.aspectj</groupId>
