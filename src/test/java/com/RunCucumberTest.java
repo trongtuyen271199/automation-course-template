@@ -1,11 +1,10 @@
 package com;
 
-import org.junit.runner.RunWith;
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
+import io.cucumber.testng.CucumberOptions;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
 
-@RunWith(Cucumber.class)
+
 @CucumberOptions(
         features = "src/test/resources/features",
         monochrome = true,
@@ -17,7 +16,6 @@ import io.cucumber.junit.CucumberOptions;
                 "json:target/cucumber-reports/cucumber.json" ,
         }
 )
-public class RunCucumberTest {
+public class RunCucumberTest extends AbstractTestNGCucumberTests{
     
 }
-//
