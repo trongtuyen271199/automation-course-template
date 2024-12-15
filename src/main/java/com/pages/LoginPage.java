@@ -51,9 +51,9 @@ public class LoginPage extends BasePage {
 // email không đúng 
  public By messageErroEmail= By.xpath("//ul[@class='woocommerce-error']/li[contains(text(), 'Địa chỉ email không xác định')]");
 // null email + nulll email  pass 
- public By messageNullAccount= By.xpath("//ul[@class='woocommerce-error']/li[strong[text()='Lỗi:']]");
+ public By messageNullAccount= By.xpath("//li[strong = 'Lỗi:']/text()[contains(., 'Yêu cầu tên tài khoản')]");
  // sai pass
- public By messageNullPass = By.xpath("//ul[@class='woocommerce-error']//a[contains(@href, 'lost-password')]");
+ public By messageNullPass = By.xpath("//li[strong[text() = 'Lỗi']]");
  // null pass 
  public By messageFailsePass = By.xpath("//ul[@class='woocommerce-error']/li/a[contains(text(), 'Bạn quên mật khẩu?')]");
  

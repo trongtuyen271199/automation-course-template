@@ -7,17 +7,17 @@ Feature: Login functionality cucumber
     And user enters password "<pass>"
     And user submit login
     Then verify login successfully "<expected>"
-    Then verify login erro email <expectedMessageErroEmail>
-    Then verify login null mail <expectedMessageNullEmailDisplay>
-    Then verify login erro password <expectedMessageErroPassDisplay>
-    Then verify login null pass <expectedMessageNullPassDisplay>
-    Then verify login null email and pass <expectedMessageNullEmailAndPassDisplay>
+    Then verify login erro email "<expectedMessageErroEmail>"
+    Then verify login null mail "<expectedMessageNullEmail>"
+    Then verify login erro password "<expectedMessageErroPass>"
+    Then verify login null pass "<expectedMessageNullPass>"
+    Then verify login null email and pass "<expectedMessageNullEmailAndPass>"
 
     Examples: Page titles
-      | email                          | pass            | expected | expectedMessageErroEmail | expectedMessageNullEmailDisplay | expectedMessageErroPassDisplay | expectedMessageNullPassDisplay | expectedMessageNullEmailAndPassDisplay |
-      | trongtuyen451@gmail.com        | Admin@123456    | true     | false                    | false                           | false                          | false                          | false                                  |
-      | trongtuyentestfailse@gmail.com | Admin@123456    | false    | true                     | false                           | false                          | false                          | false                                  |
-      |                                | Admin@123456    | false    | false                    | true                            | false                          | false                          | false                                  |
-      | trongtuyen451@gmail.com        | Adminpassfailse | false    | false                    | false                           | true                           | false                          | false                                  |
-      | trongtuyen451@gmail.com        |                 | false    | false                    | false                           | false                          | true                           | false                                  |
-      |                                |                 | false    | false                    | false                           | false                          | false                          | true                                   |
+      | email                          | pass            | expected | expectedMessageErroEmail | expectedMessageNullEmail | expectedMessageErroPass | expectedMessageNullPass | expectedMessageNullEmailAndPass |
+      | trongtuyen451@gmail.com        | Admin@123456    | true     | false                    | false                    | false                   | false                   | false                           |
+      | trongtuyentestfailse@gmail.com | Admin@123456    | false    | true                     | false                    | false                   | false                   | false                           |
+      |                                | Admin@123456    | false    | false                    | true                     | false                   | false                   | true                            |
+      | trongtuyen451@gmail.com        | Adminpassfailse | false    | false                    | false                    | true                    | false                   | false                           |
+      | trongtuyen451@gmail.com        |                 | false    | false                    | false                    | false                   | true                    | false                           |
+      |                                |                 | false    | false                    | true                     | false                   | false                   | true                            |

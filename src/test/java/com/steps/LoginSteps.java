@@ -118,7 +118,7 @@ public class LoginSteps {
     public void verifyLoginNullAccount(String expectedMessageNullEmailDisplay) {
         boolean expectedMessageNullEmail = Boolean.parseBoolean(expectedMessageNullEmailDisplay);
         boolean messageNullEmailDisplayed = isMessageErroNullEmailDisplayed();
-        Assert.assertEquals(messageNullEmailDisplayed, expectedMessageNullEmailDisplay);
+        Assert.assertEquals(messageNullEmailDisplayed, expectedMessageNullEmail);
        
     }
 
@@ -138,7 +138,7 @@ public class LoginSteps {
     public void verifyLoginErroPassl(String expectedMessageErroPassDisplay) {
         boolean expectedMessageErroPass = Boolean.parseBoolean(expectedMessageErroPassDisplay);
         boolean messageErroPassDisplayed = isMessageErroFailsePassDisplayed();
-        Assert.assertEquals(messageErroPassDisplayed, expectedMessageErroPassDisplay);
+        Assert.assertEquals(messageErroPassDisplayed, expectedMessageErroPass);
        
     }
 
@@ -158,7 +158,7 @@ public class LoginSteps {
     public void verifyLoginNullPassl(String expectedMessageNullPassDisplay) {
         boolean expectedMessageNullPass = Boolean.parseBoolean(expectedMessageNullPassDisplay);
         boolean messageNullPassDisplayed = isMessageErroNullPassDisplayed();
-        Assert.assertEquals(messageNullPassDisplayed, expectedMessageNullPassDisplay);
+        Assert.assertEquals(messageNullPassDisplayed, expectedMessageNullPass);
        
     }
 
@@ -178,7 +178,7 @@ public class LoginSteps {
     public void verifyLoginNullEmailAndPassl(String expectedMessageNullEmailAndPassDisplay) {
         boolean expectedMessageNullEmailAndPass = Boolean.parseBoolean(expectedMessageNullEmailAndPassDisplay);
         boolean messageNullEmailAndPassDisplayed = isMessageErroNullAccountlDisplayed();
-        Assert.assertEquals(messageNullEmailAndPassDisplayed, expectedMessageNullEmailAndPassDisplay);
+        Assert.assertEquals(messageNullEmailAndPassDisplayed, expectedMessageNullEmailAndPass);
        
     }
 
