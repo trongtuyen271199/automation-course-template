@@ -14,16 +14,21 @@ public class LoginPage extends BasePage {
 // Form Đăng Nhập 
 // input email
     By byEmail = By.xpath("//input[@id='username']");
-
     public LoginPage enterEmail(String uname) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(byEmail)).sendKeys(uname);
+       
+        WebElement emailField= wait.until(ExpectedConditions.visibilityOfElementLocated(byEmail));
+        emailField.clear();
+        emailField.sendKeys(uname);
+        
         return this;
     }
 // input pass
     By byPassword = By.xpath("//input[@id='password']");
-
+  
     public LoginPage enterPassword(String pw) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(byPassword)).sendKeys(pw);
+        WebElement passwordField =wait.until(ExpectedConditions.visibilityOfElementLocated(byPassword));
+        passwordField.clear();
+        passwordField.sendKeys(pw);
         return this;
     }
 // button login 

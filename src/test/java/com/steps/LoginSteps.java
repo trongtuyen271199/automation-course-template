@@ -81,7 +81,14 @@ public class LoginSteps {
         Assert.assertEquals(logoutBtnDisplayed, expected);
        
     }
+//click logout 
+@Then("user submit logout")
+public void userSubmitLogout() {
+    HomePage homePage=new HomePage(driver);
+    homePage.clickLogout();
+   
 
+}
     // sai email
     public boolean isMessageErroFailseEmailDisplayed() {
         try {
@@ -181,7 +188,6 @@ public class LoginSteps {
         Assert.assertEquals(messageNullEmailAndPassDisplayed, expectedMessageNullEmailAndPass);
        
     }
-
     @After
     public void tearDown() {
         if (driver != null) {
