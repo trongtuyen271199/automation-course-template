@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" parallel="tests" name="DemoSuite">
+    <test thread-count="1" parallel="classes" name="DemoTest">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+           <class name="com.LoginTest" >
+                <methods>
+                    <include name="loginTestSuccess"/>
+                </methods>
+
+                 <methods>
+                    <include name="loginTestFalse"/>
+                </methods>
+               </class>
+            <classs name="com.HomePageTest">   
+            </class>
+            <classs name="com.PostPageTest">   
+            </class>
+        </classes>
+    </test>
+</suite> <!-- Suite -->
