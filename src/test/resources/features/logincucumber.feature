@@ -6,12 +6,13 @@ Feature: Login functionality cucumber
     When user enters email "<email>"
     And user enters password "<pass>"
     And user submit login
-    Then verify login successfully "<expected>"
     Then verify login erro email "<expectedMessageErroEmail>"
     Then verify login null mail "<expectedMessageNullEmail>"
     Then verify login erro password "<expectedMessageErroPass>"
     Then verify login null pass "<expectedMessageNullPass>"
     Then verify login null email and pass "<expectedMessageNullEmailAndPass>"
+    Then verify login successfully "<expected>"
+    # Then user submit logout
 
     Examples: Page titles
       | email                          | pass            | expected | expectedMessageErroEmail | expectedMessageNullEmail | expectedMessageErroPass | expectedMessageNullPass | expectedMessageNullEmailAndPass |

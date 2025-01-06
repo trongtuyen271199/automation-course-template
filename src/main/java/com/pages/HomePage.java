@@ -9,6 +9,10 @@ public class HomePage extends BasePage {
         super(givenDriver);
     }
     public By byLogoutBtn = By.xpath("//li[contains(@class,'logout')]");
+    public HomePage clickLogout() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(byLogoutBtn)).click();
+        return this;
+    }
 // form seach
 // Box seach
     By bySeachBox = By.xpath("//input[@placeholder='Tìm kiếm...'][1]");
